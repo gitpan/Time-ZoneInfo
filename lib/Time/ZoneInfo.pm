@@ -1,7 +1,7 @@
 package Time::ZoneInfo;
 use strict;
 use vars qw/$VERSION/;
-$VERSION = '0.1';
+$VERSION = '0.2';
 use IO::File;
 
 $Time::ZoneInfo::ERROR = "";
@@ -32,7 +32,7 @@ sub init {
 		next if ($line =~ /^\s*#/);
 		next if ($line =~ /^\s*$/);
 		$line =~ s/#.*$//;
-		if ($line =~ /^[^#](\S+)\s*\t+\s*(\S+)\s*\t\s*(\S+)\s*\t+\s*.*$/) {
+		if ($line =~ /^[^#](\S+)\s*\t\s*(\S+)\s*\t\s*(\S+)\s*(\t|$)/) {
 			$zone = $3;
 			if ($zone =~ m|^(.+?)/(.+)$|) {
 				$regions{$1}++;
@@ -112,6 +112,11 @@ Return zones (optionally just for one region)
 =head1 ERRORS
 
 You can read $Time::ZoneInfo::ERROR for an error message at any time.
+
+=head1 CONTRIBUTIONS
+
+Thanks to Richard Carver <cpan.org-rnc@thecarverzone.com> for finding
+issues processing comments.
 
 =head1 AUTHOR
 
