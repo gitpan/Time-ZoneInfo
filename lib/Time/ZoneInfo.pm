@@ -1,7 +1,7 @@
 package Time::ZoneInfo;
 use strict;
 use vars qw/$VERSION/;
-$VERSION = '0.2';
+$VERSION = '0.3';
 use IO::File;
 
 $Time::ZoneInfo::ERROR = "";
@@ -91,6 +91,9 @@ An OO interface to accessing a list of timezones. This is useful if you
 want to provide an interface for your user to choose one of the available
 time zones.
 
+This will be the final release of Time::ZoneInfo as we hope it will be replaced
+by code in the perl date time project - see L<http://datetime.perl.org/>.
+
 Currently it is fairly hard coded to work on Debian Linux, but I will 
 take any suggesitons on other locaitons so it can automatically fall
 back to other file locations, and provide your own as an alternative.
@@ -120,7 +123,7 @@ issues processing comments.
 
 =head1 AUTHOR
 
-Scot Penrose, E<lt>scottp@dd.com.auE<gt>
+Scot Penrose, E<lt>scott@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
